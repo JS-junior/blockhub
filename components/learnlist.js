@@ -9,9 +9,9 @@ import { Text as Heading } from "react-native-elements";
 
 const { height, width } = Dimensions.get("window")
 
-function ListBox(){
+function ListBox({ navigation }){
         return(
-            <TouchableOpacity style={styles.listBox}>
+            <TouchableOpacity onPress={()=> navigation.navigate("Tutorial")} style={styles.listBox}>
             <Image style={styles.listBoxImage} source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa_QgmSW4n9JXniwB4aixDvPZxElV2XbHN5g&usqp=CAU" }} />
             <View style={{ display: "flex", flexDirection: "column", justifyItems: "center", alignItems: "center", marginLeft: 10 }}>
             <Heading h4>Hello World</Heading>
@@ -21,7 +21,7 @@ function ListBox(){
         )
 }
 
-export default function LearnPage({ navigation }){
+export default function LearnList({ navigation }){
 
     const [ tutorials, setTutorials ] = useState([1,2,3,4,5,6,7,8,9])
     useLayoutEffect(()=>{
@@ -38,7 +38,7 @@ export default function LearnPage({ navigation }){
             <Heading h1 style={styles.textHeading}>All New Courses</Heading>
             <Text selectable style={{ color:"darkgray", width: "80%", marginBottom: 20 }}>This module covers everything from scratch, you will have the basic fundamental understanding of python programming language</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
-            <FlatList style={styles.listBoxContainer} data={tutorials} renderItem={ListBox} />
+            <FlatList style={styles.listBoxContainer} data={tutorials} renderItem={()=> <ListBox navigation={navigation} />} />
             </ScrollView>
           </View>
           )

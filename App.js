@@ -5,7 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from "./components/home"
 import Settings from "./components/settings"
-import LearnPage from "./components/learnpage"
+import LearnList from "./components/learnlist"
+import Tutorial from "./components/tutorial"
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +15,8 @@ function MyTabs() {
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Settings" component={Settings} />
-      <Tab.Screen name="LearnPage" component={LearnPage} />
+      <Tab.Screen name="LearnList" component={LearnList} />
+      <Tab.Screen name="Tutorial" component={Tutorial} />
     </Tab.Navigator>
   );
 }

@@ -12,7 +12,7 @@ const { width, height } = Dimensions.get("window")
 
 function TutorialCard({ navigation }){
          return(
-              <TouchableOpacity onPress={()=> navigation.navigate("LearnPage")} style={styles.card}>
+              <TouchableOpacity onPress={()=> navigation.navigate("LearnList")} style={styles.card}>
               <Image style={styles.cardImage} source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa_QgmSW4n9JXniwB4aixDvPZxElV2XbHN5g&usqp=CAU" }} />
          <Heading h4>Learn about Web3</Heading>
          <Text style={{ color: "darkgray", width: 200}}>This module covers everything from scratch. You will learn the fundamentals</Text>
@@ -46,7 +46,7 @@ export default function Home({ navigation }){
     return(
           <View style={styles.container}>
           
-          <ScrollView style={{ display: "flex", flexDirection: "column" }} showsVerticalScrollIndicator={false}>
+          <ScrollView style={{ display: "flex", flexDirection: "column" }} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
           <Image source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa_QgmSW4n9JXniwB4aixDvPZxElV2XbHN5g&usqp=CAU" }} style={{ width: width - 30, height: 200, borderRadius: 10, display: "flex", flexDirection: "column", justifySelf: "center", alignSelf: "center"}} />
           <Row title="NFT" navigation={navigation} />
           <Row title="DeFi" navigation={navigation} />
